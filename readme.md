@@ -41,3 +41,16 @@ SELECT * FROM payers;
 SELECT column_name, data_type
 FROM information_schema.columns
 WHERE table_name = 'patients';
+```
+## :broom: Data Cleaning & Standardization
+
+During data inspection, the following patterns were identified and handled appropriately:
+
+- Optional demographic fields (`suffix`, `maiden`, `zip`) contain `NULL` values, which were treated as valid and left unchanged.
+- Categorical fields use abbreviated codes:
+  - `marital`: `S` (Single), `M` (Married)
+  - `gender`: `M` (Male), `F` (Female)
+- These fields were standardized or interpreted consistently during analysis.
+- Patient name fields contained non-alphabetic characters, indicating synthetic or unvalidated entries.
+
+
