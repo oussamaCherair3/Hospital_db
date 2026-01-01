@@ -19,7 +19,7 @@ SELECT COUNT(*) FROM encounters;
 ```
 - Data Range: 2021-2022
 
-## :database: Database Tables
+## :card_file_box: Database Tables
 - patients
 - encounters
 - procedures
@@ -36,3 +36,8 @@ SELECT * FROM organizations;
 SELECT * FROM payers;
 ```
 
+### Table Structure Example (patients)
+```sql
+SELECT column_name, data_type
+FROM information_schema.columns
+WHERE table_name = 'patients';
