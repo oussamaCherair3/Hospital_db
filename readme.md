@@ -66,3 +66,9 @@ SELECT COUNT(*) FROM patients WHERE deathdate IS NULL;
 ```sql
 SELECT COUNT(*) FROM patients WHERE deathdate IS NOT NULL;
 ```
+- The Top 5 most common procedure descriptions performed in the hospital.
+```sql
+SELECT COUNT(p.description) AS procedure_count,p.description FROM patients AS Pat
+INNER JOIN encounters AS EN ON Pat.id = EN.patient
+INNER JOIN procedures AS P ON EN.id=p.encounter group by p.description ORDER BY COUNT(p.description);
+```
